@@ -1,0 +1,106 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+}
+/* en grid container organizamos todas las areas de la web, es el dibujo, diagramacion*/
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    "navbar navbar" /*cuantas columnas ocupa de la primera fila la navbar = 2 columnas*/
+    "menu-lat content" /*la menu-lat ocupa 1 columna y el content ocupa 1 columna*/
+    "foot foot"; /*la foot ocupa 2 columnas*/
+  min-height: 100vh;
+  grid-template-columns: 250px auto; /*la primera columna de 250px fijo y la segunda columna se adapta al espacio restante*/
+  grid-template-rows: 150px auto 100px; /*la primera fila de 150px fijo, la segunda fila se adapta al espacio restante y la tercera fila de 100px fijo*/
+}
+
+.navbar {
+  background-image: url("../images/6106991.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  grid-area: navbar;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  color: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-lat {
+  background-color: rgb(57, 57, 57);
+  grid-area: menu-lat;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  padding: 20px;
+  justify-content: flex-start;
+}
+
+.menu-lat h3 {
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  margin-bottom: 30px;
+}
+a {
+  color: rgb(191, 191, 191);
+  text-decoration: none;
+  margin-bottom: 10px;
+  font-size: 13px;
+}
+
+.content {
+  background-color: rgb(231, 231, 231);
+  grid-area: content;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  gap: 20px;
+}
+
+.item {
+  background-color: rgb(255, 255, 255);
+  margin: 20px;
+  padding: 20px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.item img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 5px;
+  display: block;
+}
+
+button {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: rgb(104, 0, 173);
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  border-radius: 25px;
+}
+button:hover {
+  background-color: rgb(0, 166, 192);
+}
+
+.foot {
+  grid-area: foot;
+  background-color: rgb(0, 127, 173);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(255, 255, 255);
+  font-size: 10px;
+}
